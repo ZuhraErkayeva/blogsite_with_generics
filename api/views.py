@@ -1,4 +1,5 @@
 from rest_framework import generics
+
 from .serializers import InstructorSerializer, CourseSerializer,LessonSerializer
 from .models import Instructor, Course, Lesson
 
@@ -14,9 +15,11 @@ class CourseListCreateAPIView(generics.ListCreateAPIView):
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
 
+
 class CourseRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
+
 
 
 class LessonListCreateAPIView(generics.ListCreateAPIView):

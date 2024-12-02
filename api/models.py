@@ -2,7 +2,7 @@ from django.db import models
 
 class Instructor(models.Model):
     name = models.CharField(max_length=150)
-    email = models.EmailField()
+    email = models.EmailField(unique=True, error_messages={'error':'emailni togri kiriting.'})
     specialty = models.TextField()
 
     def __str__(self):
